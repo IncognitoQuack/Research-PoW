@@ -1,0 +1,116 @@
+{
+  "SWaT": {
+    "CT-GNN": {
+      "f1": 0.9031,
+      "precision": 0.9549,
+      "recall": 0.8567,
+      "rcl_top1": 0.2353,
+      "rcl_top3": 0.3529,
+      "latency_median_ms": 2.51,
+      "latency_p95_ms": 2.55
+    },
+    "MTAD-GAT": {
+      "f1": 0.9041,
+      "precision": 0.9571,
+      "recall": 0.8567,
+      "rcl_top1": 0.1176,
+      "rcl_top3": 0.2353,
+      "latency_median_ms": 0.79,
+      "latency_p95_ms": 0.81
+    },
+    "GANF": {
+      "f1": 0.9123,
+      "precision": 0.9103,
+      "recall": 0.9142,
+      "rcl_top1": 0.1176,
+      "rcl_top3": 0.2353,
+      "latency_median_ms": 1.09,
+      "latency_p95_ms": 1.12
+    },
+    "LSTM-VAE": {
+      "f1": 0.9041,
+      "precision": 0.9571,
+      "recall": 0.8567,
+      "rcl_top1": 0.1176,
+      "rcl_top3": 0.2353,
+      "latency_median_ms": 0.7,
+      "latency_p95_ms": 0.73
+    }
+  },
+  "WADI": {
+    "CT-GNN": {
+      "f1": 0.8859,
+      "precision": 0.89,
+      "recall": 0.8819,
+      "rcl_top1": 0.3333,
+      "rcl_top3": 0.5,
+      "latency_median_ms": 2.89,
+      "latency_p95_ms": 2.95
+    },
+    "MTAD-GAT": {
+      "f1": 0.8859,
+      "precision": 0.89,
+      "recall": 0.8819,
+      "rcl_top1": 0.0833,
+      "rcl_top3": 0.3333,
+      "latency_median_ms": 0.83,
+      "latency_p95_ms": 0.85
+    },
+    "GANF": {
+      "f1": 0.8842,
+      "precision": 0.8865,
+      "recall": 0.8819,
+      "rcl_top1": 0.0833,
+      "rcl_top3": 0.3333,
+      "latency_median_ms": 1.1,
+      "latency_p95_ms": 1.13
+    },
+    "LSTM-VAE": {
+      "f1": 0.8842,
+      "precision": 0.8865,
+      "recall": 0.8819,
+      "rcl_top1": 0.1667,
+      "rcl_top3": 0.3333,
+      "latency_median_ms": 0.69,
+      "latency_p95_ms": 0.7
+    }
+  },
+  "PSM": {
+    "CT-GNN": {
+      "f1": 0.9407,
+      "precision": 0.9104,
+      "recall": 0.9731,
+      "rcl_top1": 0.2069,
+      "rcl_top3": 0.4483,
+      "latency_median_ms": 2.01,
+      "latency_p95_ms": 2.07
+    },
+    "MTAD-GAT": {
+      "f1": 0.9427,
+      "precision": 0.9141,
+      "recall": 0.9731,
+      "rcl_top1": 0.0345,
+      "rcl_top3": 0.2069,
+      "latency_median_ms": 0.68,
+      "latency_p95_ms": 0.7
+    },
+    "GANF": {
+      "f1": 0.9294,
+      "precision": 0.8894,
+      "recall": 0.9731,
+      "rcl_top1": 0.0345,
+      "rcl_top3": 0.2069,
+      "latency_median_ms": 1.07,
+      "latency_p95_ms": 1.11
+    },
+    "LSTM-VAE": {
+      "f1": 0.9445,
+      "precision": 0.9037,
+      "recall": 0.989,
+      "rcl_top1": 0.0345,
+      "rcl_top3": 0.2069,
+      "latency_median_ms": 0.72,
+      "latency_p95_ms": 0.8
+    }
+  }
+}
