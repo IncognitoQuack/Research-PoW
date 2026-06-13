@@ -1,0 +1,42 @@
+{
+  "Full_DHGE": {
+    "accuracy": 0.5333,
+    "macro_f1": 0.3059,
+    "auroc": 0.7713,
+    "eda20": 0.4444,
+    "mdl_minutes": 72.53,
+    "latency_median_ms": 0.289
+  },
+  "Euclidean_GNN": {
+    "accuracy": 0.4889,
+    "macro_f1": 0.2809,
+    "auroc": 0.7672,
+    "eda20": 0.4667,
+    "mdl_minutes": 60.8,
+    "latency_median_ms": 0.129
+  },
+  "Static_DHGE": {
+    "accuracy": 0.5556,
+    "macro_f1": 0.3197,
+    "auroc": 0.7773,
+    "eda20": 0.4444,
+    "mdl_minutes": 68.53,
+    "latency_median_ms": 0.166
+  },
+  "NoCurvAttn_DHGE": {
+    "accuracy": 0.5333,
+    "macro_f1": 0.303,
+    "auroc": 0.7611,
+    "eda20": 0.4222,
+    "mdl_minutes": 71.2,
+    "latency_median_ms": 0.21
+  },
+  "NoRiskScore_DHGE": {
+    "accuracy": 0.5111,
+    "macro_f1": 0.284,
+    "auroc": 0.7389,
+    "eda20": 0.5111,
+    "mdl_minutes": 66.13,
+    "latency_median_ms": 0.287
+  }
+}

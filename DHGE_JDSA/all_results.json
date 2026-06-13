@@ -1,0 +1,128 @@
+{
+  "PHEME9": {
+    "D-HGE": {
+      "accuracy": 0.4727,
+      "macro_f1": 0.3389,
+      "auroc": 0.7043,
+      "eda20": 0.4,
+      "mdl_minutes": 62.18,
+      "latency_median_ms": 0.289
+    },
+    "BiGCN": {
+      "accuracy": 0.4909,
+      "macro_f1": 0.2883,
+      "auroc": 0.7743,
+      "eda20": 0.4727,
+      "mdl_minutes": 74.18,
+      "latency_median_ms": 0.065
+    },
+    "DDGCN": {
+      "accuracy": 0.5091,
+      "macro_f1": 0.3429,
+      "auroc": 0.78,
+      "eda20": 0.3636,
+      "mdl_minutes": 72.65,
+      "latency_median_ms": 0.106
+    },
+    "DynGCN": {
+      "accuracy": 0.5091,
+      "macro_f1": 0.2976,
+      "auroc": 0.7743,
+      "eda20": 0.4182,
+      "mdl_minutes": 75.71,
+      "latency_median_ms": 0.124
+    },
+    "CGNKP": {
+      "accuracy": 0.5273,
+      "macro_f1": 0.311,
+      "auroc": 0.7343,
+      "eda20": 0.4364,
+      "mdl_minutes": 81.16,
+      "latency_median_ms": 0.161
+    }
+  },
+  "Twitter15": {
+    "D-HGE": {
+      "accuracy": 0.52,
+      "macro_f1": 0.5053,
+      "auroc": 0.807,
+      "eda20": 0.38,
+      "mdl_minutes": 930.24,
+      "latency_median_ms": 0.331
+    },
+    "BiGCN": {
+      "accuracy": 0.38,
+      "macro_f1": 0.36,
+      "auroc": 0.8333,
+      "eda20": 0.32,
+      "mdl_minutes": 941.76,
+      "latency_median_ms": 0.091
+    },
+    "DDGCN": {
+      "accuracy": 0.52,
+      "macro_f1": 0.5125,
+      "auroc": 0.8048,
+      "eda20": 0.34,
+      "mdl_minutes": 838.08,
+      "latency_median_ms": 0.144
+    },
+    "DynGCN": {
+      "accuracy": 0.46,
+      "macro_f1": 0.4461,
+      "auroc": 0.8333,
+      "eda20": 0.3,
+      "mdl_minutes": 1056.96,
+      "latency_median_ms": 0.169
+    },
+    "CGNKP": {
+      "accuracy": 0.42,
+      "macro_f1": 0.4273,
+      "auroc": 0.7018,
+      "eda20": 0.36,
+      "mdl_minutes": 1062.72,
+      "latency_median_ms": 0.297
+    }
+  },
+  "Twitter16": {
+    "D-HGE": {
+      "accuracy": 0.5,
+      "macro_f1": 0.4778,
+      "auroc": 0.8065,
+      "eda20": 0.4,
+      "mdl_minutes": 892.8,
+      "latency_median_ms": 0.311
+    },
+    "BiGCN": {
+      "accuracy": 0.525,
+      "macro_f1": 0.5291,
+      "auroc": 0.7957,
+      "eda20": 0.375,
+      "mdl_minutes": 774.0,
+      "latency_median_ms": 0.085
+    },
+    "DDGCN": {
+      "accuracy": 0.55,
+      "macro_f1": 0.5051,
+      "auroc": 0.7527,
+      "eda20": 0.325,
+      "mdl_minutes": 691.2,
+      "latency_median_ms": 0.126
+    },
+    "DynGCN": {
+      "accuracy": 0.575,
+      "macro_f1": 0.5619,
+      "auroc": 0.7491,
+      "eda20": 0.325,
+      "mdl_minutes": 1249.2,
+      "latency_median_ms": 0.147
+    },
+    "CGNKP": {
+      "accuracy": 0.325,
+      "macro_f1": 0.3053,
+      "auroc": 0.595,
+      "eda20": 0.25,
+      "mdl_minutes": 1292.4,
+      "latency_median_ms": 0.249
+    }
+  }
+}
