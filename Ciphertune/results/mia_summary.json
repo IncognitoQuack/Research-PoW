@@ -1,0 +1,29 @@
+{
+  "centralized": {
+    "condition": "centralized",
+    "epsilon_round": null,
+    "mia_auc": 0.4998,
+    "n_members": 150,
+    "n_nonmembers": 150,
+    "mean_member_loss": 1.058733719587326,
+    "mean_nonmember_loss": 1.0768012062708536
+  },
+  "ciphertune": {
+    "condition": "ciphertune",
+    "epsilon_round": null,
+    "mia_auc": 0.4609660336011687,
+    "n_members": 148,
+    "n_nonmembers": 148,
+    "mean_member_loss": 1.0839499086141586,
+    "mean_nonmember_loss": 1.0759905294792071
+  },
+  "dp_fedavg_eps2.0": {
+    "condition": "dp_fedavg",
+    "epsilon_round": 2.0,
+    "mia_auc": 0.4798438641344047,
+    "n_members": 148,
+    "n_nonmembers": 148,
+    "mean_member_loss": 11.614899729380808,
+    "mean_nonmember_loss": 11.468790564677937
+  }
+}
