@@ -1,6 +1,6 @@
 # CipherTune 
 
-This is the real, runnable implementation behind the CipherTune paper
+This is the runnable implementation behind the CipherTune paper
 (Privacy-Preserving LLM Fine-Tuning Framework Using Homomorphic Encryption
 for Secure Cybersecurity Applications). Every number that ends up in the
 paper's tables and figures comes from running this code on a local machine
