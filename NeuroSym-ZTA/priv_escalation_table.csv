@@ -1,0 +1,7 @@
+Method,DENY_Prec,DENY_Recall,DENY_F1
+NeuroSym-ZTA (Ours),0.3025,0.0745,0.1196
+Standalone BiGRU,0.332,0.1698,0.2247
+No Symbolic Layer,0.2135,0.0849,0.1215
+Static Fusion (α=0.5),0.2072,0.1429,0.1691
+Random Forest,0.0,0.0,0.0
+Rule Engine Only,0.0,0.0,0.0
