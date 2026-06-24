@@ -13,7 +13,7 @@ NeuroSym-ZTA combines a **BiGRU behavioural encoder** with a **differentiable sy
 
 ## Dataset
 
-NSL-KDD is downloaded automatically — no login required.
+NSL-KDD 
 
 | File | Records |
 |------|---------|
@@ -40,8 +40,6 @@ Python 3.9+. GPU optional; CPU runtime ~10-15 min.
 python neurosym_zta.py          # full run (30 epochs)
 python neurosym_zta.py --quick  # smoke test (8 epochs, ~3 min)
 ```
-
-All outputs go to `./results/` — 7 publication-ready figures (PDF+PNG), two CSV tables, and `summary.json`.
 
 ---
 
