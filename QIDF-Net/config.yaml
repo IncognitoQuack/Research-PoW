@@ -1,0 +1,53 @@
+# QIDF-Net experiment configuration
+# Quantum-Inspired Dual-Feature Network for Deepfake Detection and Forensic Attribution
+
+data:
+  train_dir: "data/train"
+  val_dir:   "data/val"
+  test_dir:  "data/test"
+  celeb_dir: ""                  # optional: path to Celeb-DF test split
+  img_size:  224
+  max_per_class: 1500            # cap training samples per class (real/fake)
+
+classical:
+  model: "efficientnet_b4"
+  batch_size: 32
+  pca_components: 256            # reduce 1792-dim → 256-dim before fusion
+
+quantum:
+  n_dct_features: 8              # AC DCT coefficients fed into quantum kernel
+  n_landmarks: 300               # Nystrom approximation landmarks
+  n_components: 64               # output dimension of quantum branch
+
+fusion:
+  hidden_dim: 128                # fused representation dimension
+  dropout: 0.3
+  epochs: 60
+  lr: 0.001
+  batch_size: 64
+  weight_decay: 1e-4
+
+ensemble:
+  xgb_n_estimators: 200
+  rf_n_estimators: 200
+  lgb_n_estimators: 200
+  weights: [0.4, 0.3, 0.3]      # XGB / RF / LGB soft-vote weights
+
+attribution:
+  classes:
+    - "Real"
+    - "DeepFakes"
+    - "Face2Face"
+    - "FaceSwap"
+    - "NeuralTextures"
+  hidden_dim: 64
+  epochs: 60
+
+output:
+  cache_dir:   "outputs/cache"
+  models_dir:  "outputs/models"
+  results_dir: "outputs/results"
+  figures_dir: "outputs/figures"
+
+seed: 42
+device: "auto"                   # "auto" | "cuda" | "cpu"
