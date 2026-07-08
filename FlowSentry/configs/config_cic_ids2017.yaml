@@ -1,0 +1,65 @@
+# Dataset-specific overrides for CIC-IDS2017.
+#
+# Why this file exists: CIC-IDS2017 has ~2.26M training flows vs. NSL-KDD's
+# ~126k — roughly 18x more. With the default config.yaml (batch_size=256,
+# 40 epochs, single-threaded data loading), one epoch alone can take well
+# over an hour on a laptop CPU, making the full run multi-day. Nothing
+# about the *model* needs to change for a fair comparison across datasets;
+# what changes here is purely the compute budget: larger batches, fewer
+# DataLoader workers stalls, and a shorter training schedule with tighter
+# early stopping. If you use this file, say so explicitly in the paper's
+# reproducibility section (e.g. "CIC-IDS2017 was trained with a larger
+# batch size and fewer maximum epochs than NSL-KDD for tractable wall-clock
+# time; see configs/config_cic_ids2017.yaml").
+
+seed: 42
+
+data:
+  window_length: 10
+  stride: 1
+  test_size: 0.2
+  val_size: 0.1
+  scaler: "standard"
+  binary_labels: true
+  # Optional: cap training-set size via stratified subsampling (test set is
+  # NEVER subsampled, so evaluation stays honest on the full distribution).
+  # Set to null to disable (uses the full ~2.26M training rows).
+  max_train_samples: 300000
+
+model:
+  cnn:
+    channels: [32, 64, 128]
+    kernel_size: 3
+    dropout: 0.3
+  rnn:
+    hidden_size: 128
+    num_layers: 2
+    bidirectional: true
+    dropout: 0.3
+  fusion:
+    hidden_size: 128
+    dropout: 0.4
+
+train:
+  batch_size: 1024          # much larger batch = far fewer steps/epoch
+  epochs: 15                # 2.26M (or 300k subsampled) rows already gives
+                             # many gradient steps per epoch; fewer epochs needed
+  lr: 0.001
+  weight_decay: 0.00001
+  early_stopping_patience: 3
+  optimizer: "adam"
+  loss: "cross_entropy"
+  num_workers: 4             # parallel data loading (tune down if you see
+                             # multiprocessing issues on macOS; 0 is always safe)
+
+latency:
+  n_warmup: 20
+  n_runs: 500
+  batch_sizes: [1, 32, 128]
+  device_priority: ["mps", "cuda", "cpu"]
+
+paths:
+  processed_dir: "data/processed"
+  results_dir: "results"
+  figures_dir: "figures"
+  checkpoints_dir: "checkpoints"

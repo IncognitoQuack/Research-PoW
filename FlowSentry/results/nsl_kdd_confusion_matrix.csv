@@ -1,0 +1,7 @@
+model,TN,FP,FN,TP
+ensemble,9487,224,4728,8105
+cnn_only,9042,669,4714,8119
+rnn_only,9475,236,4607,8226
+random_forest,9439,272,4774,8059
+svm,9502,209,4666,8167
+signature_rule,9500,211,6562,6271

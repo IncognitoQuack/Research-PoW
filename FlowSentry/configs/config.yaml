@@ -1,0 +1,48 @@
+# Central configuration for all experiments.
+# Every script reads this file; override individual values with CLI flags.
+
+seed: 42
+
+data:
+  window_length: 10          # timesteps per sequence fed to the RNN branch
+  stride: 1
+  test_size: 0.2             # used only for CIC-IDS2017 (NSL-KDD ships pre-split)
+  val_size: 0.1
+  scaler: "standard"         # "standard" or "minmax"
+  binary_labels: true        # true = benign vs attack; false = multiclass
+
+model:
+  cnn:
+    channels: [32, 64, 128]
+    kernel_size: 3
+    dropout: 0.3
+  rnn:
+    hidden_size: 128
+    num_layers: 2
+    bidirectional: true
+    dropout: 0.3
+  fusion:
+    hidden_size: 128
+    dropout: 0.4
+
+train:
+  batch_size: 256
+  epochs: 40
+  lr: 0.001
+  weight_decay: 0.00001
+  early_stopping_patience: 6
+  optimizer: "adam"
+  loss: "cross_entropy"      # class-weighted automatically if imbalance detected
+  num_workers: 0             # DataLoader workers; see configs/config_cic_ids2017.yaml
+
+latency:
+  n_warmup: 20
+  n_runs: 500
+  batch_sizes: [1, 32, 128]
+  device_priority: ["mps", "cuda", "cpu"]   # mps = Apple Silicon GPU, auto-skipped if unavailable
+
+paths:
+  processed_dir: "data/processed"
+  results_dir: "results"
+  figures_dir: "figures"
+  checkpoints_dir: "checkpoints"

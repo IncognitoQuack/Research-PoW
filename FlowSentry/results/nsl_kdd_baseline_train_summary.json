@@ -1,0 +1,13 @@
+{
+  "random_forest": {
+    "train_time_sec": 0.8926951885223389
+  },
+  "svm": {
+    "train_time_sec": 0.3796653747558594
+  },
+  "signature_rule": {
+    "train_time_sec": 0.0,
+    "feature_idx": 28,
+    "threshold": -0.05213141441345215
+  }
+}
