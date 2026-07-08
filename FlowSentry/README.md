@@ -36,10 +36,10 @@ nids-ensemble/
 └── README.md
 ```
 
-## 2. Getting the real datasets (you must download these yourself)
+## 2. Getting the real datasets (download these yourself)
 
-The code will not fabricate or substitute data. Download the official files
-and place them as below.
+The code does not fabricate or substitute data. Download the official files
+and place them as below in the code.
 
 ### NSL-KDD
 Source: Canadian Institute for Cybersecurity, University of New Brunswick
@@ -85,8 +85,7 @@ python3 tests/smoke_test.py
 This should complete in under a minute and print PASS for every stage
 (loading → windowing → model forward pass → training loop → evaluation →
 latency benchmark → figure generation). It proves there are no shape/logic
-bugs; it does **not** produce meaningful detection numbers — it's a plumbing
-test, not a substitute for the real experiment. Discard `results/smoke_*`.
+bugs; it does **not** produce meaningful detection numbers. Discard `results/smoke_*`.
 
 ## 5. Running the real experiment
 
@@ -129,14 +128,14 @@ Outputs:
 
 NSL-KDD has ~126k training rows; CIC-IDS2017 has ~2.26M. With identical
 hyperparameters, CIC-IDS2017 would take roughly an order of magnitude longer
-per epoch, and full multi-day runs on a laptop are common if nothing is
+per epoch, and full multi-day runs on a device if nothing is
 tuned for it. `run_all.sh` automatically uses
 **`configs/config_cic_ids2017.yaml`** for that dataset, which differs from
 the default config only in ways that affect wall-clock time, not the model
 architecture itself:
 
-- **Apple Silicon GPU (MPS) support**: `get_device()` now tries `mps` before
-  falling back to `cuda`/`cpu`. On an M-series Mac this alone can give a
+- **Apple Silicon GPU (MPS) support**: `get_device()` tries `mps` before
+  falling back to `cuda`/`cpu`. On an M-series Mac this alone gives a
   large speedup for the CNN/LSTM branches. No action needed — it's
   automatic; if you ever hit an MPS op that isn't implemented, PyTorch will
   print a clear error naming the op (rare in recent versions).
@@ -147,37 +146,15 @@ architecture itself:
 - **`num_workers: 4`** for parallel DataLoader batching (set to `0` in
   `configs/config.yaml` if you ever see multiprocessing issues — 0 is
   always safe, just single-threaded).
-- **Optional stratified training-set subsampling** via `data.max_train_samples`
-  (default 300,000 in the CIC config). This only caps the **training**
-  split; the **test** split is never subsampled, so reported metrics are
-  still evaluated against the full, honest test distribution. This is a
-  legitimate, common practice for making a huge dataset tractable on
-  commodity hardware — but you must disclose it if you use it, e.g.:
-  *"CIC-IDS2017 models were trained on a stratified 300,000-row subsample
-  of the ~2.26M available training flows for computational tractability;
-  evaluation was performed on the full held-out test split."*
-  To use the full 2.26M rows instead, set `max_train_samples: null` in
-  `configs/config_cic_ids2017.yaml` (expect it to take much longer).
 
-You'll also now see a live progress bar per epoch (via `tqdm`) plus a
+Also see live progress bar per epoch (via `tqdm`) plus a
 printed steps-per-epoch count and an ETA estimate after epoch 1, so a long
 run is visibly progressing rather than looking frozen.
 
-## 6. Reporting real results in the paper
-
-Only use the numbers written by `evaluate.py` / `latency_bench.py` into
-`results/`. Do not hand-edit these files. If you re-run with different
-seeds/hyperparameters, re-run `make_figures.py` so the figures match.
-
-## 7. Random seeds & determinism
+## 6. Random seeds & determinism
 
 All scripts accept `--seed` (default 42) and set it for `numpy`, `random`,
 and `torch` (including CUDA, with `torch.use_deterministic_algorithms(True)`
 where supported). Minor nondeterminism can still occur on GPU due to cuDNN
 kernels; report mean ± std over at least 5 seeds for the paper's headline
 numbers (the `run_all.sh` script has a `--n_seeds` flag for this).
-
-## 8. Citation
-
-If you use this code, please cite the accompanying paper (details to be
-added once accepted/published).
