@@ -70,7 +70,7 @@ def _local_train(local_model: MLP, X: torch.Tensor, y: torch.Tensor,
             X_b, y_b = X[idx], y[idx]
 
             opt.zero_grad()
-            logits = local_model(X_b).squeeze()
+            logits = local_model(X_b).squeeze(-1)
             loss = F.binary_cross_entropy_with_logits(logits, y_b)
 
             if anchor_params is not None and fim_acc is not None:
@@ -370,7 +370,7 @@ def _auc_single(model: nn.Module, X_te: torch.Tensor,
                 y_te: torch.Tensor) -> float:
     model.eval()
     with torch.no_grad():
-        probs = torch.sigmoid(model(X_te).squeeze()).numpy()
+        probs = torch.sigmoid(model(X_te).squeeze(-1)).numpy()
     y_np = y_te.numpy()
     if len(np.unique(y_np)) < 2:
         return 0.5

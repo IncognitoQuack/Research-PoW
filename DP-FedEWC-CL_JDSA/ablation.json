@@ -7,7 +7,7 @@
       "fwt": -0.0328,
       "avg_acc": 0.923,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.11
+      "latency_median_ms": 129.57
     },
     "no_recycling": {
       "avg_auc": 0.9656,
@@ -15,7 +15,7 @@
       "fwt": 0.0701,
       "avg_acc": 0.9656,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.1
+      "latency_median_ms": 127.88
     },
     "no_fim_aggregation": {
       "avg_auc": 0.9784,
@@ -23,7 +23,7 @@
       "fwt": 0.0337,
       "avg_acc": 0.9784,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.15
+      "latency_median_ms": 132.19
     },
     "no_ewc": {
       "avg_auc": 0.9712,
@@ -31,7 +31,7 @@
       "fwt": -0.0923,
       "avg_acc": 0.9712,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 18.73
+      "latency_median_ms": 95.32
     }
   },
   "lambda_sensitivity": {
@@ -41,7 +41,7 @@
       "fwt": 0.0621,
       "avg_acc": 0.9727,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.1
+      "latency_median_ms": 128.74
     },
     "lambda_1.0": {
       "avg_auc": 0.9623,
@@ -49,7 +49,7 @@
       "fwt": 0.0328,
       "avg_acc": 0.9623,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.12
+      "latency_median_ms": 128.6
     },
     "lambda_10.0": {
       "avg_auc": 0.8404,
@@ -57,7 +57,7 @@
       "fwt": 0.057,
       "avg_acc": 0.8404,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.09
+      "latency_median_ms": 130.74
     },
     "lambda_100.0": {
       "avg_auc": 0.7145,
@@ -65,7 +65,7 @@
       "fwt": 0.0738,
       "avg_acc": 0.7145,
       "privacy_epsilon": 20.228,
-      "latency_median_ms": 23.04
+      "latency_median_ms": 129.83
     }
   },
   "epsilon_sensitivity": {
@@ -75,7 +75,7 @@
       "fwt": -0.0135,
       "avg_acc": 0.9009,
       "privacy_epsilon": 6.419,
-      "latency_median_ms": 23.06
+      "latency_median_ms": 130.26
     },
     "sigma_2.5": {
       "avg_auc": 0.8932,
@@ -83,7 +83,7 @@
       "fwt": -0.1142,
       "avg_acc": 0.8932,
       "privacy_epsilon": 9.116,
-      "latency_median_ms": 23.08
+      "latency_median_ms": 130.72
     },
     "sigma_1.5": {
       "avg_auc": 0.9364,
@@ -91,7 +91,7 @@
       "fwt": 0.0916,
       "avg_acc": 0.9364,
       "privacy_epsilon": 16.689,
-      "latency_median_ms": 23.05
+      "latency_median_ms": 125.79
     },
     "sigma_0.9": {
       "avg_auc": 0.9469,
@@ -99,7 +99,7 @@
       "fwt": 0.0939,
       "avg_acc": 0.9469,
       "privacy_epsilon": 28.786,
-      "latency_median_ms": 23.07
+      "latency_median_ms": 128.07
     }
   }
 }

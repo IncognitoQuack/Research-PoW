@@ -102,7 +102,7 @@ def dp_sgd_step(model: nn.Module,
     """
     model.train()
     optimizer.zero_grad()
-    logits = model(X).squeeze()
+    logits = model(X).squeeze(-1)
     loss = F.binary_cross_entropy_with_logits(logits, y)
     loss.backward()
 
@@ -266,7 +266,7 @@ def train_one_task_dp_fedewc_cl(
                     # Base DP-SGD step with gradient clipping + noise
                     local_model.train()
                     opt.zero_grad()
-                    logits = local_model(X_b).squeeze()
+                    logits = local_model(X_b).squeeze(-1)
                     ce_loss = F.binary_cross_entropy_with_logits(logits, y_b)
 
                     # EWC penalty (only if we have previous task info)
