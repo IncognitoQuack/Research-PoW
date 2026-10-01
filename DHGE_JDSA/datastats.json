@@ -1,0 +1,30 @@
+{
+ "twitter15": {
+  "claims": 1490,
+  "train": 1194,
+  "test": 296,
+  "nodes_mean": 35.91476510067114,
+  "nodes_median": 20.0,
+  "nodes_max": 381,
+  "posts": 53513,
+  "depth_mean": 1.780536912751678,
+  "depth_max": 5,
+  "frac_first_ckpt": 0.7376151589333433,
+  "frac_level1": 0.9213757715421441,
+  "frac_by_60": 0.8760301235213873
+ },
+ "twitter16": {
+  "claims": 818,
+  "train": 655,
+  "test": 163,
+  "nodes_mean": 31.755501222493887,
+  "nodes_median": 18.0,
+  "nodes_max": 365,
+  "posts": 25976,
+  "depth_mean": 1.7493887530562346,
+  "depth_max": 5,
+  "frac_first_ckpt": 0.7029950723744995,
+  "frac_level1": 0.9238086534947342,
+  "frac_by_60": 0.8626039421004004
+ }
+}
