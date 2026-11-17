@@ -8,6 +8,9 @@ Refer to individual project directories for paper-specific documentation and cit
 
 ## License
 
-All rights reserved.
+The source code in this repository is released under the [MIT License](LICENSE).
 
-The contents of this repository are provided for transparency, archival, and scholarly reference purposes only. No permission is granted to reproduce, modify, distribute, sublicense, publish, incorporate into derivative works, or otherwise use any portion of the materials without prior written authorization from the copyright holder.
+Not covered by that license, and kept under their original terms:
+
+- Third-party datasets (for example NSL-KDD, CIC-IDS2017, CVE/NVD records). Follow each dataset's own license and citation requirements.
+- Manuscript PDFs and paper figures, which are subject to the policies of the journals they were submitted to. Cite the paper if you reuse them.
